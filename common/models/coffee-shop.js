@@ -10,9 +10,13 @@ module.exports = function(CoffeeShop) {
         console.log('currentHour is:', currentHour);
 
         if(currentHour > OPEN_HOUR && currentHour < CLOSE_HOUR) {
-            response = 'We are open for business. Current Hour it is ' + currentHour;
+            response = ['We are open for business.',
+                    ' Current Hour it is ', currentHour].join('');
         } else {
-            response = 'Sorry, we are closed. Open daily from 6am to 8pm. Current Hour it is ' + currentHour;
+            response = ['Sorry, we are closed.',
+                  ' Open daily from 6am to 8pm.',
+                  ' Current Hour it is ',
+                  currentHour].join('');
         }
         cb(null, response);
     };
